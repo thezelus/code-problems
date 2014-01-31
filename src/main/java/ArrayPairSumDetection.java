@@ -39,9 +39,9 @@ public class ArrayPairSumDetection {
 
     public static void main(String[] args) {
         ArrayPairSumDetection arrayPairSumDetection = new ArrayPairSumDetection();
-        arrayPairSumDetection.findArrayPairSumForUnsortedArray(10, new int[]{3, 4, 5, 6, 7});
+        arrayPairSumDetection.findArrayPairSumForUnsortedArray(10, new int[]{7, 4, 6, 5, 3});
         System.out.println();
-        arrayPairSumDetection.findArrayPairSumForUnsortedArray(8, new int[]{3, 4, 5, 4, 4});
+        arrayPairSumDetection.findArrayPairSumForUnsortedArray(8, new int[]{4, 4, 5, 3, 4});
     }
 
 

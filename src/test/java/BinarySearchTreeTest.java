@@ -84,4 +84,21 @@ public class BinarySearchTreeTest {
             assertThat(actualTraversedList.get(i), equalTo(expectedTraversedList.get(i)));
         }
     }
+
+    @Test
+    public void testBreadthFirstTraversal() throws Exception {
+        BinarySearchTree binarySearchTree = getTestTree(new int[]{17, 1, 11, 65, 99, 0, 12, 4, 18, 2, 121}, 50);
+        ArrayList<Integer> actualTraversedList = Lists.newArrayList();
+        ArrayList<Integer> expectedTraversedList = Lists.newArrayList(50, 17, 65, 1, 18, 99, 0, 11, 121, 4, 12, 2);
+
+        binarySearchTree.breadthFirstTraversal(binarySearchTree.getRoot(), actualTraversedList);
+
+        assertThat(actualTraversedList.size(), equalTo(expectedTraversedList.size()));
+        for(int i = 0; i<actualTraversedList.size(); i++){
+            assertThat(actualTraversedList.get(i), equalTo(expectedTraversedList.get(i)));
+        }
+    }
+
+
+
 }

@@ -1,4 +1,8 @@
+import com.google.common.collect.Queues;
+
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class BinarySearchTree {
     private Node root;
@@ -83,6 +87,19 @@ public class BinarySearchTree {
         if (element.getRightChild() != null)
             postOrderTreeTraversal(element.getRightChild(), traversalList);
         traversalList.add(element.getValue());
+    }
+
+    public void breadthFirstTraversal(Node element, ArrayList<Integer> traversalList){
+        Queue<Node> nodeQueue = new LinkedList<Node>();
+        nodeQueue.add(element);
+        while (!nodeQueue.isEmpty()){
+            Node firstElement = nodeQueue.remove();
+            traversalList.add(firstElement.getValue());
+            if(firstElement.getLeftChild() != null)
+                nodeQueue.add(firstElement.getLeftChild());
+            if(firstElement.getRightChild() != null)
+                nodeQueue.add(firstElement.getRightChild());
+        }
     }
 
 }

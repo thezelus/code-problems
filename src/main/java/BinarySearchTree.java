@@ -1,4 +1,4 @@
-import java.util.List;
+import java.util.ArrayList;
 
 public class BinarySearchTree {
     private Node root;
@@ -59,6 +59,30 @@ public class BinarySearchTree {
             return element.getRightChild() != null && searchValue(element.getRightChild(), desiredValue);
         }
         return false;
+    }
+
+    public void preOrderTreeTraversal(Node element, ArrayList<Integer> traversalList) {
+        traversalList.add(element.getValue());
+        if (element.getLeftChild() != null)
+            preOrderTreeTraversal(element.getLeftChild(), traversalList);
+        if (element.getRightChild() != null)
+            preOrderTreeTraversal(element.getRightChild(), traversalList);
+    }
+
+    public void inOrderTreeTraversal(Node element, ArrayList<Integer> traversalList) {
+        if (element.getLeftChild() != null)
+            inOrderTreeTraversal(element.getLeftChild(), traversalList);
+        traversalList.add(element.getValue());
+        if (element.getRightChild() != null)
+            inOrderTreeTraversal(element.getRightChild(), traversalList);
+    }
+
+    public void postOrderTreeTraversal(Node element, ArrayList<Integer> traversalList) {
+        if (element.getLeftChild() != null)
+            postOrderTreeTraversal(element.getLeftChild(), traversalList);
+        if (element.getRightChild() != null)
+            postOrderTreeTraversal(element.getRightChild(), traversalList);
+        traversalList.add(element.getValue());
     }
 
 }
